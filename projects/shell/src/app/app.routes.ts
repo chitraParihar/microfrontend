@@ -23,7 +23,10 @@ export const APP_ROUTES: Routes = [
         })
         .then(m => m.FlightsModule) 
     },
-
+    {
+      path: 'network-assurance',
+      loadChildren: () => import('./../../../network-assurance/src/app/app.module').then((m) => m.NAAppModule)
+    },
     {
       path: '**',
       component: NotFoundComponent
